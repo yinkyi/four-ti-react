@@ -17,6 +17,7 @@ const AddTask: React.FC<addTaskProps> = ({ onAddTask }) => {
     {
       onSuccess: async () => {
         await queryClient.refetchQueries("tasks");
+        setNewTask("");
         onAddTask();
       },
     }

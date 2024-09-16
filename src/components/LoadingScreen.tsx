@@ -2,10 +2,10 @@ import React from "react";
 
 const LoadingScreen: React.FC = () => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
+    <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="flex flex-col items-center">
         <svg
-          className="w-12 h-12 text-white animate-spin"
+          className="w-10 h-10 text-blue-500 animate-spin"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -21,10 +21,10 @@ const LoadingScreen: React.FC = () => {
           <path
             className="opacity-75"
             fill="currentColor"
-            d="M4 12a8 8 0 018-8v2a6 6 0 00-6 6H4z"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
           ></path>
         </svg>
-        <p className="mt-4 text-lg text-white">Loading...</p>
+        <p className="mt-4 text-lg text-gray-700">Loading...</p>
       </div>
     </div>
   );

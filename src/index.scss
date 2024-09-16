@@ -12,3 +12,35 @@
 .btn {
   @apply rounded-full py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider;
 }
+
+.checkbox-input {
+  @apply sr-only;
+}
+
+.checkbox-custom {
+  @apply flex items-center justify-center w-6 h-6 border-2 border-gray-400 rounded-full relative cursor-pointer transition-colors;
+}
+
+.checkbox-custom::before {
+  content: "";
+  @apply absolute w-4 h-4 bg-transparent rounded-full border-2 border-transparent transition-all;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox-input:checked + .checkbox-custom::before {
+  @apply bg-blue-500 border-blue-500;
+}
+
+.checkbox-custom svg {
+  @apply w-4 h-4 text-white absolute opacity-0 transition-opacity;
+}
+
+.checkbox-input:checked + .checkbox-custom svg {
+  @apply opacity-100;
+}
+
+.alert {
+  @apply fixed top-0 left-0 right-0 p-4 m-auto z-50;
+}
