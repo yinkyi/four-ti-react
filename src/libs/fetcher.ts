@@ -16,7 +16,7 @@ export async function saveUserInfo(idToken: string) {
 
 export async function getTasks() {
   try {
-    const res = await client.get(`/todos`);
+    const res = await client.get(`/tasks`);
     return res.data.data;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
@@ -26,20 +26,20 @@ export async function getTasks() {
 
 export async function saveTask(data: TaskPayload) {
   try {
-    const res = await client.post("/todos", data);
+    const res = await client.post("/tasks", data);
     return res.data.data;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
-    throw new Error(error.message || "Todo request failed");
+    throw new Error(error.message || "Task request failed");
   }
 }
 
 export async function updateTask(data: TaskUpdatePayload) {
   try {
-    const res = await client.patch(`/todos/${data.id}`, data);
+    const res = await client.patch(`/tasks/${data.id}`, data);
     return res.data.data;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
-    throw new Error(error.message || "Todo request failed");
+    throw new Error(error.message || "Task request failed");
   }
 }
