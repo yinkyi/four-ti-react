@@ -1,3 +1,4 @@
+import { BookmarkSquareIcon, PencilIcon } from "@heroicons/react/24/solid";
 import { useMutation, useQuery } from "react-query";
 import { getTasks, updateTask } from "../libs/fetcher";
 import LoadingScreen from "./LoadingScreen";
@@ -122,24 +123,20 @@ const TaskList: React.FC<addTaskProps> = ({ onAddTask }) => {
 
                 {isEditingId === task.id ? (
                   <button
-                    className="text-green-400 hover:text-green "
+                    className="text-gray-100 hover:text-green"
                     onClick={() => handleSaveClick(task)}
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      className="w-6 h-6"
-                    >
-                      <path d="M20.293 5.293a1 1 0 00-1.414 0L10 13.586 5.121 8.707a1 1 0 00-1.414 1.414l5.5 5.5a1 1 0 001.414 0l9-9a1 1 0 000-1.414z" />
-                    </svg>
+                    <BookmarkSquareIcon
+                      className="w-5 h-5 "
+                      aria-hidden="true"
+                    />
                   </button>
                 ) : (
                   <button
                     className="text-gray-400 hover:text-white group-has-[:checked]:hidden"
                     onClick={() => setIsEditingId(task.id)}
                   >
-                    ✏️
+                    <PencilIcon className="w-5 h-5" aria-hidden="true" />
                   </button>
                 )}
               </li>

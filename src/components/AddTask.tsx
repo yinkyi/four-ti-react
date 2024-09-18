@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "react-query";
 import { saveTask } from "../libs/fetcher";
 import { queryClient } from "../utils/config";
-
+import { PlusIcon } from "@heroicons/react/24/outline";
 interface addTaskProps {
   onAddTask: () => void;
 }
@@ -45,7 +45,7 @@ const AddTask: React.FC<addTaskProps> = ({ onAddTask }) => {
             : "hover:bg-blue-700"
         }  `}
       >
-        ➕
+        <PlusIcon className="w-7 h-7" />
       </button>
     </div>
   );
