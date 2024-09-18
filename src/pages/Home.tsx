@@ -18,7 +18,11 @@ const HomePage = () => {
   };
 
   const handleLogout = () => {
-    logout({});
+    logout({
+      logoutParams: {
+        returnTo: `http://localhost:${import.meta.env.VITE_APP_PORT}`,
+      },
+    });
     dispatch(authActions.logout());
   };
 
