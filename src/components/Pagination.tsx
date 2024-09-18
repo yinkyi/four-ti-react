@@ -13,9 +13,9 @@ const PaginatedNumbers: React.FC<PaginatedNumbersProps> = ({
   changePage,
 }) => {
   return Array.from({ length: totalPages }, (_, index: number) => {
-    console.log(totalPages);
     return (
       <button
+        key={index}
         onClick={() => changePage(index + 1)}
         className={`${
           page === index + 1 ? "bg-black text-white" : "hover:bg-gray-500"
@@ -64,9 +64,12 @@ const Pagination: React.FC<PaginationProps> = ({
       <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div>
           <p className="text-sm text-gray-700">
-            Showing <span className="font-medium">1</span> to{" "}
-            <span className="font-medium">10</span> of{" "}
-            <span className="font-medium">{totalItems}</span> results
+            Showing{" "}
+            <span className="font-medium">{(page - 1) * pageSize + 1}</span> to{" "}
+            <span className="font-medium">
+              {Math.min(page * pageSize, totalItems)}
+            </span>{" "}
+            of <span className="font-medium">{totalItems}</span> results
           </p>
         </div>
         <div>

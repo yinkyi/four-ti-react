@@ -35,6 +35,7 @@ const HomePage = () => {
           <ArrowRightStartOnRectangleIcon
             className="cursor-pointer h-7 w-7"
             aria-hidden="true"
+            onClick={handleLogout}
           />
         </div>
 

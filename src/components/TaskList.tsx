@@ -1,4 +1,8 @@
-import { BookmarkSquareIcon, PencilIcon } from "@heroicons/react/24/solid";
+import {
+  BookmarkSquareIcon,
+  PencilIcon,
+  CheckIcon,
+} from "@heroicons/react/24/solid";
 import { useMutation, useQuery } from "react-query";
 import { getTasks, updateTask } from "../libs/fetcher";
 import LoadingScreen from "./LoadingScreen";
@@ -92,7 +96,8 @@ const TaskList: React.FC<addTaskProps> = ({ onAddTask }) => {
                     onChange={(e) => completeTaskClick(e)}
                   />
                   <div className="checkbox-custom">
-                    <svg
+                    <CheckIcon className="w-6 h-6 text-black" />
+                    {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -104,7 +109,7 @@ const TaskList: React.FC<addTaskProps> = ({ onAddTask }) => {
                         stroke-width="2"
                         d="M5 13l4 4L19 7"
                       />
-                    </svg>
+                    </svg> */}
                   </div>
                   {!task.completed && isEditingId === task.id ? (
                     <input
