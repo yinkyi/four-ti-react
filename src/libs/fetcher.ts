@@ -14,10 +14,10 @@ export async function saveUserInfo(idToken: string) {
   return response.data;
 }
 
-export async function getTasks() {
+export async function getTasks(data: { page: number }) {
   try {
-    const res = await client.get(`/tasks`);
-    return res.data.data;
+    const res = await client.get(`/tasks?page=${data.page}&limit=10`);
+    return res.data;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     return error.response.data;

@@ -13,3 +13,24 @@ export default interface Task {
   updatedAt: string;
   user: User;
 }
+
+interface PaginationMeta {
+  totalItems: number;
+  itemCount: number;
+  itemsPerPage: number;
+  totalPages: number;
+  currentPage: number;
+}
+
+interface PaginationLinks {
+  first: string;
+  previous: string | null;
+  next: string | null;
+  last: string;
+}
+
+export interface PaginationResponse<T> {
+  meta: PaginationMeta;
+  links: PaginationLinks;
+  data: T[];
+}
